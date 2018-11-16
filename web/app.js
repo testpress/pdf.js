@@ -1268,10 +1268,20 @@ let PDFViewerApplication = {
   },
 
   requestPresentationMode() {
-    if (!this.pdfPresentationMode) {
-      return;
+    //if (!this.pdfPresentationMode) {
+    //  return;
+    //}
+    //this.pdfPresentationMode.request();
+    var elem = document.getElementById('outerContainer');
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
     }
-    this.pdfPresentationMode.request();
   },
 
   bindEvents() {
@@ -1438,7 +1448,7 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
       // any blob:-URL. The browser's same-origin policy will block requests to
       // blob:-URLs from other origins, so this is safe.
       if (origin !== viewerOrigin && protocol !== 'blob:') {
-        throw new Error('file origin does not match viewer\'s');
+        //throw new Error('file origin does not match viewer\'s');
       }
     } catch (ex) {
       let message = ex && ex.message;

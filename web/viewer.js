@@ -73,10 +73,7 @@ function getViewerConfiguration() {
       zoomIn: document.getElementById('zoomIn'),
       zoomOut: document.getElementById('zoomOut'),
       viewFind: document.getElementById('viewFind'),
-      openFile: document.getElementById('openFile'),
-      print: document.getElementById('print'),
       presentationModeButton: document.getElementById('presentationMode'),
-      download: document.getElementById('download'),
       viewBookmark: document.getElementById('viewBookmark'),
     },
     secondaryToolbar: {
@@ -86,9 +83,6 @@ function getViewerConfiguration() {
         document.getElementById('secondaryToolbarButtonContainer'),
       presentationModeButton:
         document.getElementById('secondaryPresentationMode'),
-      openFileButton: document.getElementById('secondaryOpenFile'),
-      printButton: document.getElementById('secondaryPrint'),
-      downloadButton: document.getElementById('secondaryDownload'),
       viewBookmarkButton: document.getElementById('secondaryViewBookmark'),
       firstPageButton: document.getElementById('firstPage'),
       lastPageButton: document.getElementById('lastPage'),
